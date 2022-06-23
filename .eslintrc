@@ -1,5 +1,5 @@
 {
-  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "extends": ["eslint:recommended"],
   "parserOptions": {
     "ecmaVersion": 2020,
     "ecmaFeatures": {
@@ -20,12 +20,12 @@
     "cy": false
   },
   "rules": {
-    "prettier/prettier": [
-      "error",
-      {
-        "endOfLine": "auto"
-      }
-    ],
+    // "prettier/prettier": [
+    //   "error",
+    //   {
+    //     "endOfLine": "auto"
+    //   }
+    // ],
     "eqeqeq": ["error", "always"],
     "no-console": "warn",
     "indent": [
