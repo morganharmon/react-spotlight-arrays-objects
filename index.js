@@ -3,9 +3,8 @@
 // OUTPUT: the value of the 'name' attribute i.e. Benny
 // REQS: use destructuring and the function should be a single line
 
-const pet = {name: 'Benny', type: 'dog'}
 export const getName = ({ name }) => {
-  return name;
+  return name
 }
 
 // INPUT: an object with a nested "address" attribute such as
@@ -20,7 +19,7 @@ export const printAddress = ({ name, address }) => {
 // Refactor this function so that all values in the object are destructured
 // as part of the function definitions (i.e. there should be no dots in the template literals)
 export const printUserInfo = (user) => {
-  const {username, name: {first: firstName}, name: {last: lastName}, info: {favorites: {color}}, info: {favorites: {food}}, info: {pet: {name: petName}}, info: {address: {number}}, info: {address: {street}}, info: {address: {city}}, info: {address: {country}} } = user;
+  const { username, name: { first: firstName }, name: { last: lastName }, info: { favorites: { color } }, info: { favorites: { food } }, info: { pet: { name: petName } }, info: { address: { number } }, info: { address: { street } }, info: { address: { city } }, info: { address: { country } } } = user
   return `
     Username: ${username},
     Full Name: ${firstName} ${lastName},
@@ -46,7 +45,7 @@ export const getSum = (...rest) => {
 // getFirstTwoArgs(1, 2, 3, 4, 5) should return [1, 2, [3, 4, 5]]
 // getFirstTwoArgs('a', 'b', 'c', 'd') should return ['a', 'b', ['c', 'd']]
 export const getFirstTwoArgs = (first, second, ...rest) => {
-  return [first, second, [...rest]];
+  return [first, second, [...rest]]
 }
 
 // INPUT: an object with the following structure
@@ -71,23 +70,23 @@ export const getFirstTwoArgs = (first, second, ...rest) => {
 //    use spread operator to create a new object
 
 export const addSneakerCount = ({ shoes, ...rest }) => {
-  const answer = {shoes, rest};
+  const answer = { shoes, rest }
   answer.sneakerCount = shoes.length
-  return answer;
+  return answer
 }
 
 // INPUT: brands from data.js
 // OUTPUT: the brand names listed
 // REQS: use Object.keys to solve
 export const getBrandNames = (brands) => {
-  return Object.keys(brands);
+  return Object.keys(brands)
 }
 
 // INPUT: brands from data.js
 // OUTPUT: total number of sneaker types across all brands (14)
 export const totalSneakerCount = (brands) => {
-  const {Nike: {shoes: nikeShoes}, Puma: {shoes: pumaShoes}, Adidas: {shoes: adidasShoes}} = brands
-  return nikeShoes.length + pumaShoes.length + adidasShoes.length;
+  const { Nike: { shoes: nikeShoes }, Puma: { shoes: pumaShoes }, Adidas: { shoes: adidasShoes } } = brands
+  return nikeShoes.length + pumaShoes.length + adidasShoes.length
 }
 
 // INPUT: An object
@@ -98,12 +97,12 @@ export const totalSneakerCount = (brands) => {
 // Source: https://edabit.com/challenge/pPNAs5PvB3WvnDwDM
 
 export const convertToArray = (obj) => {
-  const keys = Object.keys(obj); // an array of keys ["a", "b", ...]
-  let answer = [];
+  const keys = Object.keys(obj) // an array of keys ["a", "b", ...]
+  let answer = []
   for (let i = 0; i < keys.length; i++) {
-    answer[i] = [keys[i], obj[keys[i]]];
+    answer[i] = [keys[i], obj[keys[i]]]
   }
-  return answer;
+  return answer
 }
 
 //
